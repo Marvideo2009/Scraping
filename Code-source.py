@@ -26,7 +26,7 @@ def Scrap(event):
     html = response.content
     soup = bs(html, 'html.parser')
 
-    fait = Label(fenetre, text = "Fait !")
+    fait = Label(fenetre, text = "Fait : %s" % url)
     fait.pack()
     with open("sortie.html", "w") as file:  
         file.write(str(soup.prettify()))
