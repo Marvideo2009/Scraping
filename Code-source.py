@@ -20,9 +20,7 @@ bouton.configure(text='Executer')
 bouton.pack()
 
 def Scrap(event):
-    execute=texte.get()
-    #messagebox.showinfo(title="Erreur",message="Lien Hypertext INCORRECT !!!!!!!")
-    
+    execute=texte.get()    
     url=execute
     response = requests.get(url)
     html = response.content
@@ -30,8 +28,7 @@ def Scrap(event):
 
     fait = Label(fenetre, text = "Fait !")
     fait.pack()
-    with open("output.html", "w", encoding = 'utf-8') as file:
-        # prettify the soup object and convert it into a string  
+    with open("output.html", "w", encoding = 'utf-8') as file:  
         file.write(str(soup.prettify()))
 bouton.bind('<ButtonPress-1>',Scrap)
 
