@@ -28,7 +28,7 @@ def Scrap(event):
 
     fait = Label(fenetre, text = "Fait !")
     fait.pack()
-    with open("output.html", "w", encoding = 'utf-8') as file:  
+    with open("sortie.html", "w") as file:  
         file.write(str(soup.prettify()))
 bouton.bind('<ButtonPress-1>',Scrap)
 
